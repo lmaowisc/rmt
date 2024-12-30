@@ -2,3 +2,5 @@ url: https://lmaowisc.github.io/rmt/
 template:
   bootstrap: 5
   math-rendering: mathjax
+  params:
+    logo: logo.png
