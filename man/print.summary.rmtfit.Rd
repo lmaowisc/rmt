@@ -11,7 +11,9 @@
 
 \item{...}{Further arguments passed to or from other methods}
 }
-\value{No return value, called for side effects.}
+\value{
+No return value, called for side effects.
+}
 \description{
 Produces a printed summary of the results for the restricted
 mean times in favor of treatment

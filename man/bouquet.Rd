@@ -37,7 +37,9 @@ two sides of the plot.}
 
 \item{...}{Other arguments that can be passed to the underlying \code{plot} method.}
 }
-\value{No return value, called for side effects.}
+\value{
+No return value, called for side effects.
+}
 \description{
 Construct the bouquet plot based on the estimated stage-wise restricted mean win/loss
 times.

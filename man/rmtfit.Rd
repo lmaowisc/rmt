@@ -43,11 +43,11 @@ restricted mean times in favor of treatment.
 }
 \section{Methods (by class)}{
 \itemize{
-\item \code{default}: Default
+\item \code{rmtfit(default)}: Default
 
-\item \code{formula}: Formula
+\item \code{rmtfit(formula)}: Formula
+
 }}
-
 \examples{
 #######################
 # Multistate outcome  #

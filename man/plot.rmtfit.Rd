@@ -41,7 +41,9 @@
 
 \item{...}{Other arguments that can be passed to the underlying \code{plot} method.}
 }
-\value{No return value, called for side effects.}
+\value{
+No return value, called for side effects.
+}
 \description{
 Plot the estimated overall or stage-wise restricted mean times in favor of treatment as a
 function of follow-up time.
