@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 # rmt
 
-The **rmt** package implements the restricted mean time in favor (RMT-IF) of treatment approach to hierarchical composite endpoints [@mao2022]. With user-specified restriction times, one can estimate and make inference on the over effect size as well as its components [@mao2023] . Sample size calculation routines are also available [@mao2023a, @mao2023b].
+The **rmt** package implements the restricted mean time in favor (RMT-IF) of treatment approach to hierarchical composite endpoints [@mao2022]. With user-specified restriction times, one can estimate and make inference on the over effect size as well as its components [@mao2023] . Sample size calculation routines are also available [@mao2023a;@mao2023b].
 
 ## Installation
 

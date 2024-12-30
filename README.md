@@ -7,8 +7,8 @@ The **rmt** package implements the restricted mean time in favor
 (RMT-IF) of treatment approach to hierarchical composite endpoints (Mao
 2022). With user-specified restriction times, one can estimate and make
 inference on the over effect size as well as its components (Mao and
-Wang 2023) . Sample size calculation routines are also available Mao
-(2023a).
+Wang 2023) . Sample size calculation routines are also available (Mao
+2023b, 2023a).
 
 ## Installation
 
