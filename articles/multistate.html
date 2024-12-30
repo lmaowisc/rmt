@@ -6,11 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Analysis of multistate hierarchical outcomes by the restricted mean time in favor of treatment • rmt</title>
-<script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="../katex-auto.js"></script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Analysis of multistate hierarchical outcomes by the restricted mean time in favor of treatment">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><link href="../deps/KaTex-0.16.10/katex.min.css" rel="stylesheet">
+<script src="../deps/KaTex-0.16.10/katex.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Analysis of multistate hierarchical outcomes by the restricted mean time in favor of treatment">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -75,27 +76,17 @@ analysis of multiple prioritized outcomes.</p>
 <h3 id="data-type">Data type<a class="anchor" aria-label="anchor" href="#data-type"></a>
 </h3>
 <p>To recap the methodology, we formulate patient experience with
-multiple events as a multistate process
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Y(t)</annotation></semantics></math>
-taking values in the ordered set
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>K</mi><mo>,</mo><mi>K</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0,1,\ldots, K, K+1\}</annotation></semantics></math>,
-with a larger integer representing a more series condition. For example,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">Y(t)=0</annotation></semantics></math>
-if a cancer patient is in a state of remission,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Y(t)=1</annotation></semantics></math>
-if the cancer has relapsed,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">Y(t)=2</annotation></semantics></math>
-if it has metastasized, and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">Y(t)=3</annotation></semantics></math>
-if the patient has died. The methodology in <code>rmt</code> is
-sufficiently general to be applicable to a wide range of settings, as
-long as the following assumptions are met:</p>
+multiple events as a multistate process <span class="math inline">Y(t)</span> taking values in the ordered set <span class="math inline">\{0,1,\ldots, K, K+1\}</span>, with a larger integer
+representing a more series condition. For example, <span class="math inline">Y(t)=0</span> if a cancer patient is in a state of
+remission, <span class="math inline">Y(t)=1</span> if the cancer has
+relapsed, <span class="math inline">Y(t)=2</span> if it has
+metastasized, and <span class="math inline">Y(t)=3</span> if the patient
+has died. The methodology in <code>rmt</code> is sufficiently general to
+be applicable to a wide range of settings, as long as the following
+assumptions are met:</p>
 <ol style="list-style-type: decimal">
 <li>The outcome process is <strong>progressive</strong> (can transition
-only from a less serious to a more serious state), i.e.,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Y(t)\leq Y(s)</annotation></semantics></math>
-for
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>≤</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">t\leq s</annotation></semantics></math>;</li>
+only from a less serious to a more serious state), i.e., <span class="math inline">Y(t)\leq Y(s)</span> for <span class="math inline">t\leq s</span>;</li>
 <li>Death is the only absorbing state, i.e., no competing risks to death
 (hence “cure models” are not allowed).</li>
 </ol>
@@ -103,47 +94,33 @@ for
 <div class="section level3">
 <h3 id="effect-size-estimand">Effect size estimand<a class="anchor" aria-label="anchor" href="#effect-size-estimand"></a>
 </h3>
-<p>Let
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></msup><annotation encoding="application/x-tex">Y^{(a)}</annotation></semantics></math>
-denote the outcome process from group
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a=1</annotation></semantics></math>
-for the treatment and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a=0</annotation></semantics></math>
-for the control). The estimand of interest is constructed under a
-generalized pairwise comparison framework (Buyse, 2010). With
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><mo>⊥</mo><msup><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">Y^{(1)}\perp Y^{(0)}</annotation></semantics></math>,
-let <span class="math display">$$\mu(\tau)=E\int_0^\tau
+<p>Let <span class="math inline">Y^{(a)}</span> denote the outcome
+process from group <span class="math inline">a</span> (<span class="math inline">a=1</span> for the treatment and <span class="math inline">a=0</span> for the control). The estimand of
+interest is constructed under a generalized pairwise comparison
+framework (Buyse, 2010). With <span class="math inline">Y^{(1)}\perp
+Y^{(0)}</span>, let <span class="math display">\mu(\tau)=E\int_0^\tau
 I\{Y^{(1)}(t)&lt; Y^{(0)}(t)\}{\rm d}t -
-E\int_0^\tau I\{Y^{(1)}(t)&gt; Y^{(0)}(t)\}{\rm d}t,$$</span> for some
-pre-specified follow-up time
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>.
-We call
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>τ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mu(\tau)</annotation></semantics></math>
-the <strong>restricted mean time (RMT) in favor of treatment</strong>
-and interpret it as the <em>average time gained by the treatment in a
-more favorable condition</em>. It generalizes the familiar restricted
-mean survival time to account for the intermediate stages in disease
-progression. In fact, it can be shown that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>τ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mu(\tau)</annotation></semantics></math>
+E\int_0^\tau I\{Y^{(1)}(t)&gt; Y^{(0)}(t)\}{\rm d}t,</span> for some
+pre-specified follow-up time <span class="math inline">\tau</span>. We
+call <span class="math inline">\mu(\tau)</span> the <strong>restricted
+mean time (RMT) in favor of treatment</strong> and interpret it as the
+<em>average time gained by the treatment in a more favorable
+condition</em>. It generalizes the familiar restricted mean survival
+time to account for the intermediate stages in disease progression. In
+fact, it can be shown that <span class="math inline">\mu(\tau)</span>
 reduces to the net restricted mean survival time (Royston &amp; Parmar,
 2011) under the two-state life-death model. For details of the
 methodology, refer to Mao (2021).</p>
 <p>The overall effect size can be decomposed into stage-wise components:
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>τ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>K</mi><mo>+</mo><mn>1</mn></mrow></munderover><msub><mi>μ</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>τ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mu(\tau)=\sum_{k=1}^{K+1}\mu_k(\tau)</annotation></semantics></math>
-with <span class="math display">$$\begin{equation}\label{eq:comp}\tag{*}
+<span class="math display">\mu(\tau)=\sum_{k=1}^{K+1}\mu_k(\tau)</span>
+with <span class="math display">\begin{equation}\label{eq:comp}\tag{*}
 \mu_k(\tau)=E\int_0^\tau I\{Y^{(1)}(t)&lt;k, Y^{(0)}(t)=k\}{\rm d}t -
 E\int_0^\tau I\{Y^{(0)}(t)&lt;k, Y^{(1)}(t)=k\}{\rm d}t.
-\end{equation}$$</span> The component
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>τ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mu_k(\tau)</annotation></semantics></math>
-can be interpreted as the average ``pre-state
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>’’
-time gained by the treatment among those who have not transitioned to
-state
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(k+1)</annotation></semantics></math>
-or higher. It is clear that the last component
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mrow><mi>K</mi><mo>+</mo><mn>1</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mu_{K+1}(t)</annotation></semantics></math>
-always stands for the usual net restricted mean survival time.</p>
+\end{equation}</span> The component <span class="math inline">\mu_k(\tau)</span> can be interpreted as the average
+``pre-state <span class="math inline">k</span>’’ time gained by the
+treatment among those who have not transitioned to state <span class="math inline">(k+1)</span> or higher. It is clear that the last
+component <span class="math inline">\mu_{K+1}(t)</span> always stands
+for the usual net restricted mean survival time.</p>
 </div>
 </div>
 <div class="section level2">
@@ -157,14 +134,13 @@ function, the input data must be organized in the “long” format.
 Specifically, we need an <code>id</code> variable containing the unique
 patient identifiers, a <code>time</code> variable containing the times
 of the transitioning events, a <code>status</code> variable labeling the
-event type (<code>status=k</code> if transitioning to state
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
-and <code>status=0</code> if censored; note that death is represented by
-<code>status=K+1</code>), and, finally, a <em>binary</em>
-<code>trt</code> variable containing the subject-level treatment arm
-indicators. If <code>id</code>, <code>time</code>, <code>status</code>,
-and <code>trt</code> are all variables in a data frame
-<code>data</code>, we can then use the formula form of the function:</p>
+event type (<code>status=k</code> if transitioning to state <span class="math inline">k</span> and <code>status=0</code> if censored; note
+that death is represented by <code>status=K+1</code>), and, finally, a
+<em>binary</em> <code>trt</code> variable containing the subject-level
+treatment arm indicators. If <code>id</code>, <code>time</code>,
+<code>status</code>, and <code>trt</code> are all variables in a data
+frame <code>data</code>, we can then use the formula form of the
+function:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">obj</span><span class="op">=</span><span class="fu"><a href="../reference/rmtfit.html">rmtfit</a></span><span class="op">(</span><span class="fu"><a href="../reference/ms.html">ms</a></span><span class="op">(</span><span class="va">id</span>,<span class="va">time</span>,<span class="va">status</span><span class="op">)</span><span class="op">~</span><span class="va">trt</span>,<span class="va">data</span><span class="op">)</span></span></code></pre></div>
 <p>Otherwise, we can feed the vector-valued variables directly into the
@@ -176,21 +152,15 @@ multistate data rather than recurrent event data
 (<code>type=="recurrent"</code>).</p>
 <p>The returned object <code>obj</code> contains basically all the
 information about the overall and stage-wise RMTs. To extract relevant
-information for a particular
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>τ</mi><mo>=</mo></mrow><annotation encoding="application/x-tex">\tau=</annotation></semantics></math><code>tau</code>,
-use</p>
+information for a particular <span class="math inline">\tau=</span><code>tau</code>, use</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">obj</span>,<span class="va">tau</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="plot-of-mucdot">Plot of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>⋅</mo><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mu(\cdot)</annotation></semantics></math><a class="anchor" aria-label="anchor" href="#plot-of-mucdot"></a>
+<h3 id="plot-of-mucdot">Plot of <span class="math inline">\mu(\cdot)</span><a class="anchor" aria-label="anchor" href="#plot-of-mucdot"></a>
 </h3>
-<p>To plot the estimated
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>τ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mu(\tau)</annotation></semantics></math>
-as a function of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>,
-use</p>
+<p>To plot the estimated <span class="math inline">\mu(\tau)</span> as a
+function of <span class="math inline">\tau</span>, use</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">obj</span>,conf<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p>The option <code>conf=T</code> requests the 95% confidence limits to
@@ -203,15 +173,12 @@ will be passed to the underlying generic <code>plot</code> method.</p>
 <h3 id="bouquet-plot">Bouquet plot<a class="anchor" aria-label="anchor" href="#bouquet-plot"></a>
 </h3>
 <p>The dynamic profile of treatment effects as follow-up progresses is
-captured by the bouquet plot, which puts
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>
-on the vertical axis and plots the stage-wise restricted mean win/loss
-times, i.e., the first and second terms on the right hand side of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mo>*</mo><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(*)</annotation></semantics></math>,
-as functions of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>
-on the two sides. The bouquet plot is useful because it visualizes the
-component-wise contributions to the overall effect. To plot it, use</p>
+captured by the bouquet plot, which puts <span class="math inline">\tau</span> on the vertical axis and plots the
+stage-wise restricted mean win/loss times, i.e., the first and second
+terms on the right hand side of <span class="math inline">(*)</span>, as
+functions of <span class="math inline">\tau</span> on the two sides. The
+bouquet plot is useful because it visualizes the component-wise
+contributions to the overall effect. To plot it, use</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/bouquet.html">bouquet</a></span><span class="op">(</span><span class="va">obj</span><span class="op">)</span></span></code></pre></div>
 <p>Other graphical parameters can be specified and, if so, will be
@@ -294,8 +261,7 @@ inferential results can be obtained from
 <h3 id="graphical-analysis">Graphical analysis<a class="anchor" aria-label="anchor" href="#graphical-analysis"></a>
 </h3>
 <p>Use the following code to construct the bouquet plot and the plot for
-the estimated
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>⋅</mo><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mu(\cdot)</annotation></semantics></math>:</p>
+the estimated <span class="math inline">\mu(\cdot)</span>:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># set-up plot parameters</span></span>
 <span><span class="va">oldpar</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span><span class="st">"mfrow"</span><span class="op">)</span><span class="op">)</span></span>
