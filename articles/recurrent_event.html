@@ -6,12 +6,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Analysis of composite endpoints of recurrent event and death by the restricted mean time in favor of treatment • rmt</title>
-<script src="../katex-auto.js"></script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><link href="../deps/KaTex-0.16.10/katex.min.css" rel="stylesheet">
-<script src="../deps/KaTex-0.16.10/katex.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Analysis of composite endpoints of recurrent event and death by the restricted mean time in favor of treatment">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><script src="../deps/MathJax-3.2.2/tex-chtml.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Analysis of composite endpoints of recurrent event and death by the restricted mean time in favor of treatment">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -75,57 +74,56 @@ death.</p>
 <div class="section level3">
 <h3 id="data-type">Data type<a class="anchor" aria-label="anchor" href="#data-type"></a>
 </h3>
-<p>Let <span class="math inline">N(t)</span> denote the counting process
-for the recurrent event, e.g., repeated hospitalizations, and let <span class="math inline">N_D(t)</span> denote that for death. The composite
-outcome process is defined by <span class="math display">Y(t)=N(t)+\infty N_D(t).</span> That is, <span class="math inline">Y(t)</span> counts the number of non-fatal event on
-the living patient and jumps to <span class="math inline">\infty</span>
-when the patient dies. Traditional ways of combining the components
-include:</p>
+<p>Let <span class="math inline">\(N(t)\)</span> denote the counting
+process for the recurrent event, e.g., repeated hospitalizations, and
+let <span class="math inline">\(N_D(t)\)</span> denote that for death.
+The composite outcome process is defined by <span class="math display">\[Y(t)=N(t)+\infty N_D(t).\]</span> That is, <span class="math inline">\(Y(t)\)</span> counts the number of non-fatal event
+on the living patient and jumps to <span class="math inline">\(\infty\)</span> when the patient dies. Traditional
+ways of combining the components include:</p>
 <ol style="list-style-type: decimal">
-<li>Time to the first event: <span class="math inline">Y^*(t)=I\{N(t)+N_D(t)&gt;0\}</span>;</li>
-<li>Weighted composite event process (Mao and Lin, 2016): <span class="math inline">Y^{**}(t)=N(t)+w_DN_D(t)</span> for some <span class="math inline">w_D\geq 1</span>;</li>
+<li>Time to the first event: <span class="math inline">\(Y^*(t)=I\{N(t)+N_D(t)&gt;0\}\)</span>;</li>
+<li>Weighted composite event process (Mao and Lin, 2016): <span class="math inline">\(Y^{**}(t)=N(t)+w_DN_D(t)\)</span> for some <span class="math inline">\(w_D\geq 1\)</span>;</li>
 </ol>
-<p>Compared to these approaches, <span class="math inline">Y(t)</span>
-has the advantage of including all events while prioritizing death in a
-natural, hierarchical way.</p>
+<p>Compared to these approaches, <span class="math inline">\(Y(t)\)</span> has the advantage of including all
+events while prioritizing death in a natural, hierarchical way.</p>
 </div>
 <div class="section level3">
 <h3 id="effect-size-estimand">Effect size estimand<a class="anchor" aria-label="anchor" href="#effect-size-estimand"></a>
 </h3>
-<p>Let <span class="math inline">Y^{(a)}</span> denote the outcome
-process from group <span class="math inline">a</span> (<span class="math inline">a=1</span> for the treatment and <span class="math inline">a=0</span> for the control). The estimand of
+<p>Let <span class="math inline">\(Y^{(a)}\)</span> denote the outcome
+process from group <span class="math inline">\(a\)</span> (<span class="math inline">\(a=1\)</span> for the treatment and <span class="math inline">\(a=0\)</span> for the control). The estimand of
 interest is constructed under a generalized pairwise comparison
-framework (Buyse, 2010). With <span class="math inline">Y^{(1)}\perp
-Y^{(0)}</span>, let <span class="math display">\mu(\tau)=E\int_0^\tau
-I\{Y^{(1)}(t)&lt; Y^{(0)}(t)\}{\rm d}t -
-E\int_0^\tau I\{Y^{(1)}(t)&gt; Y^{(0)}(t)\}{\rm d}t,</span> for some
-pre-specified follow-up time <span class="math inline">\tau</span>. We
-call <span class="math inline">\mu(\tau)</span> the <strong>restricted
-mean time (RMT) in favor of treatment</strong> and interpret it as the
-<em>average time gained by the treatment in a more favorable
-condition</em>. It generalizes the familiar restricted mean survival
-time to account for the non-fatal events. In fact, it can be shown that
-<span class="math inline">\mu(\tau)</span> reduces to the net restricted
-mean survival time (Royston &amp; Parmar, 2011) if <span class="math inline">N(t)\equiv 0</span>. For details of the methodology,
-refer to Mao (2021).</p>
-<p>The overall effect size admits a component-wise decomposition: <span class="math display">\mu(\tau)=\mu_D(\tau)+\mu_H(\tau),</span> where
-<span class="math display">\begin{equation}\tag{*}
+framework (Buyse, 2010). With <span class="math inline">\(Y^{(1)}\perp
+Y^{(0)}\)</span>, let <span class="math display">\[\mu(\tau)=E\int_0^\tau I\{Y^{(1)}(t)&lt;
+Y^{(0)}(t)\}{\rm d}t -
+E\int_0^\tau I\{Y^{(1)}(t)&gt; Y^{(0)}(t)\}{\rm d}t,\]</span> for some
+pre-specified follow-up time <span class="math inline">\(\tau\)</span>.
+We call <span class="math inline">\(\mu(\tau)\)</span> the
+<strong>restricted mean time (RMT) in favor of treatment</strong> and
+interpret it as the <em>average time gained by the treatment in a more
+favorable condition</em>. It generalizes the familiar restricted mean
+survival time to account for the non-fatal events. In fact, it can be
+shown that <span class="math inline">\(\mu(\tau)\)</span> reduces to the
+net restricted mean survival time (Royston &amp; Parmar, 2011) if <span class="math inline">\(N(t)\equiv 0\)</span>. For details of the
+methodology, refer to Mao (2021).</p>
+<p>The overall effect size admits a component-wise decomposition: <span class="math display">\[\mu(\tau)=\mu_D(\tau)+\mu_H(\tau),\]</span> where
+<span class="math display">\[\begin{equation}\tag{*}
 \mu_D(\tau)=E\int_0^\tau I\{Y^{(1)}(t)&lt;\infty,
 Y^{(0)}(t)=\infty\}{\rm d} t-
 E\int_0^\tau I\{Y^{(0)}(t)&lt;\infty, Y^{(0)}(t)=\infty\}{\rm d} t
-\end{equation}</span> is equivalent to the standard net restricted mean
-survival time and <span class="math display">\mu_H(\tau)=E\int_0^\tau
-I\{Y^{(1)}(t)&lt; Y^{(0)}(t)&lt;\infty\}{\rm d}t -
-E\int_0^\tau I\{Y^{(0)}(t)&lt; Y^{(1)}(t)&lt;\infty\}{\rm d}t</span> is
-the average time gained by the treatment with fewer non-fatal events
+\end{equation}\]</span> is equivalent to the standard net restricted
+mean survival time and <span class="math display">\[\mu_H(\tau)=E\int_0^\tau I\{Y^{(1)}(t)&lt;
+Y^{(0)}(t)&lt;\infty\}{\rm d}t -
+E\int_0^\tau I\{Y^{(0)}(t)&lt; Y^{(1)}(t)&lt;\infty\}{\rm d}t\]</span>
+is the average time gained by the treatment with fewer non-fatal events
 among the living patients. The second component can be further
-decomposed by <span class="math inline">\mu_H(\tau)=\sum_{k=1}^K\mu_k(\tau)</span>, where
-<span class="math display">\begin{equation}\tag{**}
+decomposed by <span class="math inline">\(\mu_H(\tau)=\sum_{k=1}^K\mu_k(\tau)\)</span>,
+where <span class="math display">\[\begin{equation}\tag{**}
 \mu_k(\tau)=E\int_0^\tau I\{Y^{(1)}(t)&lt;k, Y^{(0)}(t)=k\}{\rm d} t-
 E\int_0^\tau I\{Y^{(0)}(t)&lt;k, Y^{(0)}(t)=k\}{\rm d} t,
-\end{equation}</span> and <span class="math inline">K</span> is the
-maximum number of non-fatal event. The quantity <span class="math inline">\mu_k(\tau)</span> can be interpreted as the average
-time gained by the treatment before experiencing the <span class="math inline">k</span>th non-fatal event among the living
+\end{equation}\]</span> and <span class="math inline">\(K\)</span> is
+the maximum number of non-fatal event. The quantity <span class="math inline">\(\mu_k(\tau)\)</span> can be interpreted as the
+average time gained by the treatment before experiencing the <span class="math inline">\(k\)</span>th non-fatal event among the living
 patients.</p>
 </div>
 </div>
@@ -156,19 +154,21 @@ function:</p>
 otherwise the input will be treated as multistate rather than recurrent
 event data. The returned object <code>obj</code> contains basically all
 the information about the overall and component-wise RMTs. To extract
-relevant information for a particular <span class="math inline">\tau=</span><code>tau</code>, use</p>
+relevant information for a particular <span class="math inline">\(\tau=\)</span><code>tau</code>, use</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">obj</span>,<span class="va">tau</span>,<span class="va">Kmax</span><span class="op">)</span></span></code></pre></div>
-<p>If the last option <code>Kmax</code> is specified, say, as <span class="math inline">l</span>, then the estimates for the <span class="math inline">\mu_k(\tau)</span> over <span class="math inline">k=l,\ldots, K</span> will be aggregated, i.e., <span class="math inline">\sum_{k=l}^K\mu_k(\tau)</span>. Therefore, to make
-inference on <span class="math inline">\mu_H(\tau)</span>, use</p>
+<p>If the last option <code>Kmax</code> is specified, say, as <span class="math inline">\(l\)</span>, then the estimates for the <span class="math inline">\(\mu_k(\tau)\)</span> over <span class="math inline">\(k=l,\ldots, K\)</span> will be aggregated, i.e.,
+<span class="math inline">\(\sum_{k=l}^K\mu_k(\tau)\)</span>. Therefore,
+to make inference on <span class="math inline">\(\mu_H(\tau)\)</span>,
+use</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">obj</span>,<span class="va">tau</span>,Kmax<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="plot-of-mucdot">Plot of <span class="math inline">\mu(\cdot)</span><a class="anchor" aria-label="anchor" href="#plot-of-mucdot"></a>
+<h3 id="plot-of-mucdot">Plot of <span class="math inline">\(\mu(\cdot)\)</span><a class="anchor" aria-label="anchor" href="#plot-of-mucdot"></a>
 </h3>
-<p>To plot the estimated <span class="math inline">\mu(\tau)</span> as a
-function of <span class="math inline">\tau</span>, use</p>
+<p>To plot the estimated <span class="math inline">\(\mu(\tau)\)</span>
+as a function of <span class="math inline">\(\tau\)</span>, use</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">obj</span>,conf<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p>The option <code>conf=T</code> requests the 95% confidence limits to
@@ -181,17 +181,17 @@ will be passed to the underlying generic <code>plot</code> method.</p>
 <h3 id="bouquet-plot">Bouquet plot<a class="anchor" aria-label="anchor" href="#bouquet-plot"></a>
 </h3>
 <p>The dynamic profile of treatment effects as follow-up progresses is
-captured by the bouquet plot, which puts <span class="math inline">\tau</span> on the vertical axis and plots the
+captured by the bouquet plot, which puts <span class="math inline">\(\tau\)</span> on the vertical axis and plots the
 component-wise restricted mean win/loss times, i.e., the first and
-second terms on the right hand side of <span class="math inline">(*)</span> and <span class="math inline">(**)</span>, as functions of <span class="math inline">\tau</span> on the two sides. The bouquet plot is
-useful because it visualizes the component-wise contributions to the
+second terms on the right hand side of <span class="math inline">\((*)\)</span> and <span class="math inline">\((**)\)</span>, as functions of <span class="math inline">\(\tau\)</span> on the two sides. The bouquet plot
+is useful because it visualizes the component-wise contributions to the
 overall effect. To plot it, use</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/bouquet.html">bouquet</a></span><span class="op">(</span><span class="va">obj</span>,<span class="va">Kmax</span><span class="op">)</span></span></code></pre></div>
 <p>The option <code>Kmax</code> performs a similar task to that in the
 <code><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary()</a></code> function. For better visualization, we should
-almost always specify a <code>Kmax</code><span class="math inline">&lt;K</span>, especially when <span class="math inline">K</span> is large. Other graphical parameters can be
-specified and, if so, will be passed to the underlying generic
+almost always specify a <code>Kmax</code><span class="math inline">\(&lt;K\)</span>, especially when <span class="math inline">\(K\)</span> is large. Other graphical parameters
+can be specified and, if so, will be passed to the underlying generic
 <code>plot</code> method.</p>
 </div>
 </div>
@@ -214,7 +214,7 @@ to usual care and 221 to receive usual care alone. With a median
 follow-up time about 28 months, the death rates in the exercise training
 and usual care groups are about 18% and 26%, and the average numbers of
 recurrent hospitalizations per patient about 2.2 and 2.6, respectively.
-The maximum number of hospitalizations per patient is <span class="math inline">K=26</span>.</p>
+The maximum number of hospitalizations per patient is <span class="math inline">\(K=26\)</span>.</p>
 <p>The dataset <code>hfaction</code> is contained in the
 <code>rmt</code> package and can be loaded by</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
@@ -288,15 +288,15 @@ The maximum number of hospitalizations per patient is <span class="math inline">
 <span><span class="co">#&gt; ---</span></span>
 <span><span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div>
 <p>From the above output, we conclude that, at 3.5 years, the combined
-treatment on average gains the patient <span class="math inline">\mu(\tau)=0.36</span> extra year in a more favorable
-state compared to the control. This total effect size comprises an
-additional <span class="math inline">\mu_D(\tau)=0.20</span> year of
-survival time and <span class="math inline">\mu_H(\tau)=0.36-0.20=0.16</span> year with fewer
-hospitalizations among the living. The latter component is mainly driven
-by a prolonging of time to the third hospitalization. The matrix
-containing the inferential results can be obtained from
+treatment on average gains the patient <span class="math inline">\(\mu(\tau)=0.36\)</span> extra year in a more
+favorable state compared to the control. This total effect size
+comprises an additional <span class="math inline">\(\mu_D(\tau)=0.20\)</span> year of survival time
+and <span class="math inline">\(\mu_H(\tau)=0.36-0.20=0.16\)</span> year
+with fewer hospitalizations among the living. The latter component is
+mainly driven by a prolonging of time to the third hospitalization. The
+matrix containing the inferential results can be obtained from
 <code>summary(obj,tau=3.5,Kmax=4)$tab</code>.</p>
-<p>To obtain the inferential result for <span class="math inline">\mu_H(\tau)</span> as a whole, run</p>
+<p>To obtain the inferential result for <span class="math inline">\(\mu_H(\tau)\)</span> as a whole, run</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># summarize the inference results for hospitalization as a whole</span></span>
 <span><span class="va">obj_sum</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">obj</span>,tau<span class="op">=</span><span class="fl">3.5</span>,Kmax<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
@@ -310,7 +310,7 @@ containing the inferential results can be obtained from
 <h3 id="graphical-analysis">Graphical analysis<a class="anchor" aria-label="anchor" href="#graphical-analysis"></a>
 </h3>
 <p>Use the following code to construct the bouquet plot and the plot for
-the estimated <span class="math inline">\mu(\cdot)</span>:</p>
+the estimated <span class="math inline">\(\mu(\cdot)\)</span>:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># set-up plot parameters</span></span>
 <span><span class="va">oldpar</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span><span class="st">"mfrow"</span><span class="op">)</span><span class="op">)</span></span>
@@ -332,9 +332,9 @@ hospitalizations, 3 hospitalization, 2 hospitalizations, and 1
 hospitalization, respectively. We can see that the restricted mean
 survival time is clearly in favor of exercise training. The restricted
 mean win times on the second and third hospitalizations are also visibly
-greater in the treatment group. The 95% confidence limits for <span class="math inline">\mu(\tau)</span> in the right panel suggests that
-the overall treatment effect becomes significant at the 0.05 level after
-approximately 1 year of follow-up and stays so till the end of the
+greater in the treatment group. The 95% confidence limits for <span class="math inline">\(\mu(\tau)\)</span> in the right panel suggests
+that the overall treatment effect becomes significant at the 0.05 level
+after approximately 1 year of follow-up and stays so till the end of the
 study.</p>
 </div>
 </div>
