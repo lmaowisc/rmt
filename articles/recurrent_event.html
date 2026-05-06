@@ -6,11 +6,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Analysis of composite endpoints of recurrent event and death by the restricted mean time in favor of treatment • rmt</title>
-<script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- mathjax math --><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script><script>
+  window.MathJax = {
+    chtml: {
+      fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/output/chtml/fonts/woff-v2"
+    }
+  };
+</script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><script src="../deps/MathJax-3.2.2/tex-chtml.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Analysis of composite endpoints of recurrent event and death by the restricted mean time in favor of treatment">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Analysis of composite endpoints of recurrent event and death by the restricted mean time in favor of treatment">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -261,29 +267,29 @@ The maximum number of hospitalizations per patient is <span class="math inline">
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Restricted mean winning time by tau = 3.5:</span></span>
 <span><span class="co">#&gt;     Event 1   Event 2    Event 3    Event 4    Event 5    Event 6    Event 7</span></span>
-<span><span class="co">#&gt; 0 0.2461459 0.1797341 0.07400189 0.05705096 0.06778913 0.03229824 0.02901336</span></span>
-<span><span class="co">#&gt; 1 0.2606647 0.2246581 0.18911776 0.07928876 0.05043218 0.04036515 0.01434557</span></span>
-<span><span class="co">#&gt;      Event 8    Event 9    Event 10    Event 11    Event 12     Event 13</span></span>
-<span><span class="co">#&gt; 0 0.02467620 0.01351584 0.007900133 0.001056981 0.007932054 0.0006445581</span></span>
-<span><span class="co">#&gt; 1 0.01169075 0.01232759 0.009301100 0.004563094 0.001627585 0.0024747931</span></span>
+<span><span class="co">#&gt; 0 0.2459671 0.1797023 0.07391981 0.05700905 0.06761022 0.03241526 0.02891853</span></span>
+<span><span class="co">#&gt; 1 0.2608496 0.2245359 0.18901342 0.07904635 0.05017314 0.04026294 0.01440990</span></span>
+<span><span class="co">#&gt;      Event 8    Event 9    Event 10   Event 11    Event 12     Event 13</span></span>
+<span><span class="co">#&gt; 0 0.02460219 0.01354735 0.007854129 0.00103309 0.008211028 0.0003654393</span></span>
+<span><span class="co">#&gt; 1 0.01168169 0.01243527 0.009208109 0.00450852 0.001553607 0.0025077249</span></span>
 <span><span class="co">#&gt;       Event 14     Event 15     Event 16     Event 17     Event 18     Event 19</span></span>
-<span><span class="co">#&gt; 0 0.0007787642 0.0003834044 0.0003137311 0.0001010352 0.0001123888 0.0004848228</span></span>
-<span><span class="co">#&gt; 1 0.0077805017 0.0019915287 0.0007116988 0.0003040931 0.0003580146 0.0001079202</span></span>
-<span><span class="co">#&gt;       Event 20     Event 21     Event 22     Event 23    Event 24     Event 25</span></span>
-<span><span class="co">#&gt; 0 0.0001781611 0.0007311137 0.0003162343 0.0005731831 0.001192464 0.0002290646</span></span>
-<span><span class="co">#&gt; 1 0.0000000000 0.0000000000 0.0000000000 0.0000000000 0.000000000 0.0000000000</span></span>
-<span><span class="co">#&gt;      Event 26  Survival  Overall</span></span>
-<span><span class="co">#&gt; 0 0.004352256 0.2967478 1.048254</span></span>
-<span><span class="co">#&gt; 1 0.000000000 0.4958881 1.407999</span></span>
+<span><span class="co">#&gt; 0 0.0008724907 0.0002284718 0.0003137589 0.0001010352 0.0001884826 4.098626e-04</span></span>
+<span><span class="co">#&gt; 1 0.0077205378 0.0020117607 0.0007229156 0.0003285298 0.0003447794 6.936066e-05</span></span>
+<span><span class="co">#&gt;       Event 20    Event 21     Event 22     Event 23    Event 24     Event 25</span></span>
+<span><span class="co">#&gt; 0 0.0001954576 0.000753361 0.0002794786 0.0005947739 0.001216739 0.0003538805</span></span>
+<span><span class="co">#&gt; 1 0.0000000000 0.000000000 0.0000000000 0.0000000000 0.000000000 0.0000000000</span></span>
+<span><span class="co">#&gt;     Event 26  Survival  Overall</span></span>
+<span><span class="co">#&gt; 0 0.00417291 0.2960596 1.046896</span></span>
+<span><span class="co">#&gt; 1 0.00000000 0.4943879 1.405772</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Restricted mean time in favor of group "1" by time tau = 3.5:</span></span>
 <span><span class="co">#&gt;           Estimate   Std.Err Z value Pr(&gt;|z|)   </span></span>
-<span><span class="co">#&gt; Event 1   0.014519  0.047535  0.3054 0.760034   </span></span>
-<span><span class="co">#&gt; Event 2   0.044924  0.045661  0.9839 0.325185   </span></span>
-<span><span class="co">#&gt; Event 3   0.115116  0.035992  3.1984 0.001382 **</span></span>
-<span><span class="co">#&gt; Event 4+ -0.013954  0.049358 -0.2827 0.777403   </span></span>
-<span><span class="co">#&gt; Survival  0.199140  0.093300  2.1344 0.032810 * </span></span>
-<span><span class="co">#&gt; Overall   0.359745  0.154062  2.3351 0.019540 * </span></span>
+<span><span class="co">#&gt; Event 1   0.014882  0.047748  0.3117 0.755277   </span></span>
+<span><span class="co">#&gt; Event 2   0.044834  0.045834  0.9782 0.327987   </span></span>
+<span><span class="co">#&gt; Event 3   0.115094  0.036098  3.1883 0.001431 **</span></span>
+<span><span class="co">#&gt; Event 4+ -0.014262  0.049464 -0.2883 0.773098   </span></span>
+<span><span class="co">#&gt; Survival  0.198328  0.093375  2.1240 0.033670 * </span></span>
+<span><span class="co">#&gt; Overall   0.358876  0.154388  2.3245 0.020098 * </span></span>
 <span><span class="co">#&gt; ---</span></span>
 <span><span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span></code></pre></div>
 <p>From the above output, we conclude that, at 3.5 years, the combined
@@ -301,9 +307,9 @@ matrix containing the inferential results can be obtained from
 <span><span class="va">obj_sum</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">obj</span>,tau<span class="op">=</span><span class="fl">3.5</span>,Kmax<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">obj_sum</span><span class="op">$</span><span class="va">tab</span></span>
 <span><span class="co">#&gt;           Estimate    Std.Err  Z value   Pr(&gt;|z|)</span></span>
-<span><span class="co">#&gt; Event 1+ 0.1606050 0.08986723 1.787136 0.07391549</span></span>
-<span><span class="co">#&gt; Survival 0.1991404 0.09330039 2.134400 0.03281004</span></span>
-<span><span class="co">#&gt; Overall  0.3597453 0.15406184 2.335071 0.01953971</span></span></code></pre></div>
+<span><span class="co">#&gt; Event 1+ 0.1605478 0.09016881 1.780525 0.07499003</span></span>
+<span><span class="co">#&gt; Survival 0.1983283 0.09337463 2.124006 0.03366960</span></span>
+<span><span class="co">#&gt; Overall  0.3588762 0.15438808 2.324507 0.02009834</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="graphical-analysis">Graphical analysis<a class="anchor" aria-label="anchor" href="#graphical-analysis"></a>
@@ -322,7 +328,7 @@ the estimated <span class="math inline">\(\mu(\cdot)\)</span>:</p>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">obj</span>,conf<span class="op">=</span><span class="cn">TRUE</span>,col<span class="op">=</span><span class="st">'red'</span>,conf.col<span class="op">=</span><span class="st">'blue'</span>,conf.lty<span class="op">=</span><span class="fl">2</span>, xlab<span class="op">=</span><span class="st">"Follow-up time (years)"</span>,</span>
 <span>        ylab<span class="op">=</span><span class="st">"RMT in favor of treatment (years)"</span>,main<span class="op">=</span><span class="st">"Exercise training vs usual care"</span>,</span>
 <span>     cex.main<span class="op">=</span><span class="fl">0.8</span><span class="op">)</span></span></code></pre></div>
-<p><img src="recurrent_event_files/figure-html/unnamed-chunk-10-1.png" width="691.2" style="display: block; margin: auto;"></p>
+<p><img src="recurrent_event_files/figure-html/unnamed-chunk-10-1.png" class="r-plt" alt="" width="691.2" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span><span class="va">oldpar</span><span class="op">)</span></span></code></pre></div>
 <p>In the bouquet plot, the four bands with different shades of gray,
@@ -370,7 +376,7 @@ trials when the proportional hazards assumption is in doubt.
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer>
