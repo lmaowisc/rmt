@@ -249,8 +249,6 @@ rmtfit.default=function(id,time,status,trt,type="multistate",...){
   # })
 
 
-
-
   # dim(psi1)
 
   Surv1=obj1$Surv
@@ -258,6 +256,14 @@ rmtfit.default=function(id,time,status,trt,type="multistate",...){
 
   Surv0=obj0$Surv
   psi0=obj0$psi
+
+  # Add a column of 1 to Surv1 and Surv0
+  Surv1 = cbind(rep(1, K+1), Surv1)
+  Surv0 = cbind(rep(1, K+1), Surv0)
+
+
+
+
 
   # dim(Surv0)
   #
