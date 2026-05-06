@@ -258,8 +258,8 @@ rmtfit.default=function(id,time,status,trt,type="multistate",...){
   psi0=obj0$psi
 
   # Add a column of 1 to Surv1 and Surv0
-  Surv1 = cbind(rep(1, K+1), Surv1)
-  Surv0 = cbind(rep(1, K+1), Surv0)
+  Surv1 = cbind(rep(1, K+1), Surv1[, 1:(m-1)])
+  Surv0 = cbind(rep(1, K+1), Surv0[, 1:(m-1)])
 
 
 
